@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#!/usr/bin/env bash
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+##@Version           :  202210291058-git
+# @@Author           :  Jason Hempstead
+# @@Contact          :  git-admin@casjaysdev.com
+# @@License          :  LICENSE.md
+# @@ReadME           :  airgeddon --help
+# @@Copyright        :  Copyright: (c) 2022 Jason Hempstead, Casjays Developments
+# @@Created          :  Saturday, Oct 29, 2022 11:16 EDT
+# @@File             :  airgeddon
+# @@Description      :  newScript
+# @@Changelog        :  newScript
+# @@TODO             :  Refactor code
+# @@Other            :
+# @@Resource         :
+# @@Terminal App     :  no
+# @@sudo/root        :  no
+# @@Template         :  bash/system
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+APPNAME="$(basename "$0")"
+VERSION="202210291058-git"
+HOME="${USER_HOME:-$HOME}"
+USER="${SUDO_USER:-$USER}"
+RUN_USER="${SUDO_USER:-$USER}"
+SRC_DIR="${BASH_SOURCE%/*}"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+cd "$HOME/.local/share/hakmgr/tools/airgeddon.sh" && exec sudo bash -c "airgeddon.sh"
+exit $?
