@@ -82,6 +82,7 @@ REPO_BRANCH="${GIT_REPO_BRANCH:-main}"
 REPO="${HAKMGRREPO:-https://github.com/hakmgr}/$APPNAME"
 REPORAW="$REPO/raw/$REPO_BRANCH"
 APPVERSION="$(__appversion "$REPORAW/version.txt")"
+PLUGDIR="$HOME/.local/share/hakmgr/tools"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Require a version higher than
 hakmgr_req_version "$APPVERSION"
