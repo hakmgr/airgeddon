@@ -83,6 +83,7 @@ REPO="${HAKMGRREPO:-https://github.com/hakmgr}/$APPNAME"
 REPORAW="$REPO/raw/$REPO_BRANCH"
 APPVERSION="$(__appversion "$REPORAW/version.txt")"
 PLUGDIR="$HOME/.local/share/hakmgr/tools"
+PLUGINS="https://github.com/v1s1t0r1sh3r3/airgeddon"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Require a version higher than
 hakmgr_req_version "$APPVERSION"
@@ -165,13 +166,7 @@ if __am_i_online; then
 fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Plugins
-if __am_i_online; then
-  if [ -d "$PLUGDIR/airgeddon/.git" ]; then
-    execute "git_update $PLUGDIR/airgeddon" "Updating plugin airgeddon"
-  else
-    execute "git_clone https://github.com/v1s1t0r1sh3r3/airgeddon $PLUGDIR/airgeddon" "Installing plugin airgeddon"
-  fi
-fi
+plugin_setup  "$PLUGINS"
 # exit on fail
 failexitcode $? "Git has failed"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
